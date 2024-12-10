@@ -69,13 +69,14 @@ git clone https://github.com/El-Only/analysis_sold_vehicles.git
 ```bash
 pip install -r requirements.txt
 ```
-- **Accede a tu aplicación:**
+- **Accede a la aplicación:**
 
 - https://analysis-sold-vehicles.onrender.com
 
 
 ## Estructura del Proyecto
-.
+
+```bash
 ├── README.md                  # Descripción del proyecto e instrucciones
 ├── app.py                     # Aplicación principal de Streamlit
 ├── vehicles_us.csv            # Conjunto de datos
