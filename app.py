@@ -59,16 +59,20 @@ if hist_button: # al hacer clic en el botón
     st.plotly_chart(fig, use_container_width=True)
 
 # Botón para gráfico de barras
-hist_button = st.button('**Creating a bar chart**') # crear un botón de barras
+hist_button = st.button('**Creating a bar chart**')  # Crear un botón de barras
 
-if hist_button: # al hacer clic en el botón
-    # escribir un mensaje
+if hist_button:  # Al hacer clic en el botón
+    # Mostrar mensaje
     st.write('Creating a bar chart for the condition car of dataset')
+
+    # Agregar datos para mejorar el rendimiento
+    aggregated_data = car_data['condition'].value_counts().reset_index()
+    aggregated_data.columns = ['condition', 'count']
+
+    # Crear un gráfico de barras usando los datos agregados
+    fig = px.bar(aggregated_data, x='condition', y='count', title="Condition Counts")
     
-    # crear un grafico de barras
-    fig = px.bar(car_data, x="condition")
-    
-    # mostrar un gráfico Plotly interactivo
+    # Mostrar el gráfico 
     st.plotly_chart(fig, use_container_width=True)
 
 # Casilla de verificación para gráfico de dispersión
